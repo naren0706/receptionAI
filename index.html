@@ -3,13 +3,39 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
+    <!-- <meta
       http-equiv="refresh"
       content="3;url=https://www.youtube.com/watch?v=agUPsTod-Ns&ab_channel=TechyDruid"
-    />
+    /> -->
     <title>Redirecting...</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>Redirecting you to the new page...</h1>
+    <div class="load-wrapper" id="load-wrapper">
+      <!-- <img src="https://i.gifer.com/79qU.gif" alt="" /> -->
+      <div id="loader" class="spin-container">
+        <div class="spin" id="spinner1"></div>
+        <div class="spin" id="spinner2"></div>
+        <div class="spin" id="spinner3"></div>
+        <div class="spin" id="spinner4"></div>
+        <h1 id="text">
+          <img id="spinner-img" src="./IMG_5611.JPG" alt="placeholder" />
+        </h1>
+      </div>
+    </div>
+    <script>
+      function updateSpinnerSize() {
+        const img = document.getElementById("spinner-img");
+        const root = document.documentElement;
+
+        // Set spinner size based on image width and height
+        root.style.setProperty("--spinner-size", `${img.clientWidth}px`);
+        root.style.setProperty("--spinner-height", `${img.clientHeight}px`);
+      }
+
+      // Update on load and window resize
+      window.addEventListener("load", updateSpinnerSize);
+      window.addEventListener("resize", updateSpinnerSize);
+    </script>
   </body>
 </html>

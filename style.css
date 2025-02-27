@@ -1,0 +1,93 @@
+:root {
+  --color-blue: #0a3255;
+  --color-cerulean: #008aab;
+  --color-green: #69be28;
+  --color-red: #cf202f;
+  --color-white: #ffffff;
+  --spinner-width: 100%;
+  --spinner-height: 100%;
+}
+.load-wrapper {
+  background-image: url("https://i.gifer.com/CGjn.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 5000;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  /* background-color: var(--color-white); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spin-container {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+#spinner-img {
+  width: 50vw; /* Adjusts based on viewport */
+  max-width: 200px; /* Prevents excessive scaling */
+  height: auto;
+}
+
+.spin {
+  border: 3px solid var(--color-blue);
+  position: absolute;
+  border-radius: 50%;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  animation: rotate 2s cubic-bezier(0.26, 1.36, 0.74, -0.29) infinite;
+}
+#spinner1 {
+  border-color: var(--color-blue);
+  width: calc(var(--spinner-width) + 60px);
+  height: calc(var(--spinner-height) + 60px);
+  border-left-color: transparent;
+  border-right-color: transparent;
+}
+#spinner2 {
+  border-color: var(--color-red);
+  width: calc(var(--spinner-width) + 80px);
+  height: calc(var(--spinner-height) + 80px);
+  border-left-color: transparent;
+  border-right-color: transparent;
+  animation: rotate2 2s cubic-bezier(0.26, 1.36, 0.74, -0.29) infinite;
+}
+#spinner3 {
+  border-color: var(--color-green);
+  width: calc(var(--spinner-width) + 100px);
+  height: calc(var(--spinner-height) + 100px);
+  border-left-color: transparent;
+  border-right-color: transparent;
+}
+#spinner4 {
+  border-color: var(--color-cerulean);
+  width: calc(var(--spinner-width) + 120px);
+  height: calc(var(--spinner-height) + 120px);
+  border-left-color: transparent;
+  border-right-color: transparent;
+  animation: rotate2 2s cubic-bezier(0.26, 1.36, 0.74, -0.29) infinite;
+}
+@keyframes rotate {
+  0% {
+    transform: rotateZ(-360deg);
+  }
+  100% {
+    transform: rotateZ(0deg);
+  }
+}
+@keyframes rotate2 {
+  0% {
+    transform: rotateZ(360deg);
+  }
+  100% {
+    transform: rotateZ(0deg);
+  }
+}
